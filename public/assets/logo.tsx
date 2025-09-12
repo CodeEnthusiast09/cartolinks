@@ -1,13 +1,19 @@
-export const KreaAi = () => {
+export const KreaAi = ({
+  size = 24,
+  className = "",
+}: {
+  size?: number | string;
+  className?: string;
+}) => {
   return (
     <svg
       aria-label="Krea Logo"
-      width="22"
-      height="22"
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
-      className="svelte-qzh0aw"
+      className={className}
     >
       <path
         d="M8.34 1.266c1.766-.124 3.324 1.105 3.551 2.802.216 1.612-.887 3.171-2.545 3.536-.415.092-.877.066-1.317.122a4.63 4.63 0 0 0-2.748 1.34l-.008.004-.01-.001-.006-.005-.003-.009q0-.009.005-.016a.04.04 0 0 0 .007-.022 438 438 0 0 1-.01-4.541c.003-1.68 1.33-3.086 3.085-3.21"

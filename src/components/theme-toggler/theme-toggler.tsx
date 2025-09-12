@@ -3,17 +3,19 @@
 import { useTheme } from "next-themes";
 import { LightModeIcon } from "../../../public/assets/light-mode-icon";
 import { DarkModeIcon } from "../../../public/assets/dark-mode-icon";
-import { Button } from "../button";
 import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "../button";
 
 export default function ThemeToggle() {
   const { theme, setTheme } = useTheme();
 
   return (
     <Button
+      size="sm"
       variant="transparent"
+      radius="rounded-full"
+      className="rounded-full focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-200 focus-visible:ring-offset-2"
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-      className="p-2 rounded-md border"
     >
       <AnimatePresence mode="wait" initial={false}>
         {theme === "dark" ? (

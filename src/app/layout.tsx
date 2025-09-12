@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { SuisseIntl } from "./font";
 import { ThemeProvider } from "@/components/provider-wrappers/theme-provider";
 import "./globals.css";
+import ReduxProvider from "@/redux/redux-provider";
 
 export const metadata: Metadata = {
   title: "Krea",
@@ -16,7 +17,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${SuisseIntl.className} antialiased`}>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ReduxProvider>
+          <ThemeProvider>{children}</ThemeProvider>
+        </ReduxProvider>
       </body>
     </html>
   );

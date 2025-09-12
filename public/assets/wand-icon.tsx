@@ -9,7 +9,7 @@ export const WandIcon = ({
     <svg
       width={size}
       height={size}
-      className={`absolute inset-0 z-20 m-auto ${className}`}
+      className={className}
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

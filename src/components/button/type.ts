@@ -2,7 +2,7 @@ export type ButtonVariant =
   | "primary"
   | "secondary"
   | "transparent"
-  | "mobile-nav"
+  | "dropdowns"
   | "neutral"
   | "danger";
 
