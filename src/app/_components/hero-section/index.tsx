@@ -7,10 +7,9 @@ import ImageCard from "./_components/image-card";
 
 const HeroSection = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-
   const [activeIndex, setActiveIndex] = useState(0);
-
-  const cardWidth = 550;
+  const [isScrolling, setIsScrolling] = useState(false);
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const scrollLeft = () => {
     if (scrollContainerRef.current) {
@@ -29,12 +28,49 @@ const HeroSection = () => {
     if (!container) return;
 
     const handleScroll = () => {
-      const index = Math.round(container.scrollLeft / cardWidth);
-      setActiveIndex(index);
+      setIsScrolling(true);
+
+      // Clear existing timeout
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+
+      // Set a timeout to detect when scrolling has stopped
+      scrollTimeoutRef.current = setTimeout(() => {
+        setIsScrolling(false);
+
+        // Get all card elements
+        const cards = container.querySelectorAll("[data-card-index]");
+        if (cards.length === 0) return;
+
+        const containerRect = container.getBoundingClientRect();
+        const containerCenter = containerRect.left + containerRect.width / 2;
+
+        let closestIndex = 0;
+        let closestDistance = Infinity;
+
+        cards.forEach((card, index) => {
+          const cardRect = card.getBoundingClientRect();
+          const cardCenter = cardRect.left + cardRect.width / 2;
+          const distance = Math.abs(cardCenter - containerCenter);
+
+          if (distance < closestDistance) {
+            closestDistance = distance;
+            closestIndex = index;
+          }
+        });
+
+        setActiveIndex(closestIndex);
+      }, 150); // Wait 150ms after scroll stops
     };
 
     container.addEventListener("scroll", handleScroll);
-    return () => container.removeEventListener("scroll", handleScroll);
+    return () => {
+      container.removeEventListener("scroll", handleScroll);
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+    };
   }, []);
 
   const cards = [
@@ -127,6 +163,7 @@ const HeroSection = () => {
             {cards.map((card, index) => (
               <div
                 key={index}
+                data-card-index={index}
                 className="flex-shrink-0 transform transition-all duration-300"
               >
                 <ImageCard
@@ -160,7 +197,7 @@ const HeroSection = () => {
               radius="rounded-full"
               size="sm"
               onClick={scrollLeft}
-              className="w-8 h-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-200 focus-visible:ring-offset-2"
+              className="w-8 h-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-200 focus-visible:ring-offset-2"
             >
               <Image
                 alt="Previous cards"
@@ -177,7 +214,7 @@ const HeroSection = () => {
               size="sm"
               radius="rounded-full"
               onClick={scrollRight}
-              className="w-8 h-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-200 focus-visible:ring-offset-2"
+              className="w-8 h-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-200 focus-visible:ring-offset-2"
             >
               <Image
                 alt="Next cards"

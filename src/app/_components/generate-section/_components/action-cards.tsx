@@ -30,14 +30,9 @@ const ActionCard = ({
       </div>
 
       {/* Right: Action Button */}
-      <Button
-        size="sm"
-        variant="transparent"
-        radius="rounded-3xl"
-        className="text-xs md:text-sm"
-      >
+      <button className="w-22 text-xs md:text-sm text-black bg-gray-200 px-4 py-2 rounded-3xl">
         Open
-      </Button>
+      </button>
     </div>
   );
 };

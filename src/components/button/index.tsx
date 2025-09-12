@@ -23,11 +23,11 @@ export const Button = (props: ButtonProps) => {
       case "secondary":
         return "bg-transparent border border-foreground text-foreground hover:bg-foreground hover:text-background focus-visible:ring-2 focus-visible:ring-foreground/20";
       case "neutral":
-        return "bg-background text-foreground border border-foreground/20 hover:bg-foreground/5 focus-visible:ring-2 focus-visible:ring-foreground/10";
+        return "bg-background text-foreground border border-foreground/20 hover:bg-background/80 focus-visible:ring-2 focus-visible:ring-foreground/10";
       case "danger":
         return "bg-[#FB0E0E] text-background hover:bg-[#F44616] focus-visible:ring-2 focus-visible:ring-red-300";
       case "transparent":
-        return "bg-foreground/5 text-foreground hover:bg-foreground/5";
+        return "bg-foreground/5 hover:bg-foreground/10";
       case "dropdowns":
         return "bg-background text-foreground hover:bg-foreground/20";
       default:

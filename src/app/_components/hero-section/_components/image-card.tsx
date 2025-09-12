@@ -60,7 +60,7 @@ const ImageCard = ({
             radius="rounded-4xl"
             variant="neutral"
             size="lg"
-            className="px-4 py-2 text-sm md:text-base font-semibold text-nowrap"
+            className="px-4 py-2 text-sm md:text-base font-semibold text-nowrap text-black "
           >
             Try {buttonText}
           </Button>
