@@ -43,7 +43,7 @@ export const NavBarItem = ({ item, onClick }: NavBarItemProps) => {
           isActive ? "bg-background shadow-sm" : "hover:bg-foreground/10"
         )}
       >
-        <span className={clsx("p-2 text-2xl")}>{item.icon}</span>
+        <span className={clsx("p-4 text-2xl")}>{item.icon}</span>
         <span className="text-base font-regular text-foreground lg:hidden">
           {item.name}
         </span>

@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Cartolinks Solutions LTD - Internship Assignment
 
-## Getting Started
+Frontend & Mobile Developer Internship Application  
+**Applicant:** [Your Full Name]  
 
-First, run the development server:
+---
 
+## 📌 Assignment
+Build the given UI design as a **pixel-perfect Next.js + TypeScript app** with the following requirements:
+- 🌗 **Dark/Light mode toggle**  
+- 🎨 TailwindCSS for styling  
+- ⚡ Fully responsive components  
+- ✅ Pixel-perfect UI as per provided design  
+
+---
+
+## 🚀 Tech Stack
+- [Next.js 15](https://nextjs.org/) – React framework for production-grade apps  
+- [TypeScript](https://www.typescriptlang.org/) – Type safety for maintainability  
+- [TailwindCSS](https://tailwindcss.com/) – Utility-first styling  
+- [Framer Motion](https://www.framer.com/motion/) – Smooth animations 
+
+---
+
+## 📂 Features Implemented (All Responsive)
+- **Theme Toggle** – Light/Dark mode with CSS variables + Tailwind integration  
+- **Navigation Bar** – Responsive, highlights active links, themed icons  
+- **Hero Section** – Scrollable cards with smooth navigation & active indicator dots  
+- **Action Cards ("Generate" Section)** – Gradient icons, “New” badges, responsive grid layout  
+- **Pixel-perfect styling** – Matches provided design closely across breakpoints  
+
+---
+
+## 🛠️ Getting Started
+
+### 1. Clone the repository
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/CodeEnthusiast09/cartolinks.git
+cd cartolinks-assignment
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install Dependencies
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Configure Next.js 
+```bash
+images: {
+  remotePatterns: [
+    {
+      protocol: "https",
+      hostname: "s.krea.ai",
+    },
+  ],
+},
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Run the develpment server
+```bash
+npm run dev
+```
 
-## Learn More
+## 📸 Screenshots (Light/Dark Mode)
 
-To learn more about Next.js, take a look at the following resources:
+### Light Mode
+![Light Mode](./public/light-mode-1.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![Light Mode](./public/light-mode-2.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Dark Mode
+![Dark Mode](./public/dark-mode-1.png)
 
-## Deploy on Vercel
+![Dark Mode](./public/dark-mode-2.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

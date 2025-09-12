@@ -52,8 +52,8 @@ export const Navbar = () => {
             <ProfileGradient />
           </div>
           <div className="flex gap-x-2 items-center font-medium">
-            <span className="text-sm">triumphalmemorableorang</span>
-            <SlArrowDown className="text-sm" />
+            <span className="text-sm line-clamp-1 break-all">triumph</span>
+            <SlArrowDown className="text-base" />
           </div>
         </button>
         {showDropdown && (
@@ -100,8 +100,8 @@ export const Navbar = () => {
       </div>
 
       {/* Desktop Navbar */}
-      <div className="hidden lg:block lg:px-4 lg:py-4">
-        <nav className="hidden lg:flex items-center bg-foreground/5 p-3 rounded-2xl duration-500 ">
+      <div className="hidden lg:block lg:p-4">
+        <nav className="hidden lg:flex items-center bg-foreground/5 px-1.5 py-2 rounded-2xl duration-500 ">
           <ul className="flex items-center gap-5">
             {navItems.map((item: NavItem, index: number) => (
               <NavBarItem key={index} item={item} onClick={() => toggleNav()} />
