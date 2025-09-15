@@ -11,12 +11,12 @@ const GallerySection = () => {
         </h3>
 
         <div className="flex items-center gap-2.5">
-          <div className="xl:flex items-center gap-2 bg-foreground/5 p-2 rounded-xl lg:hidden">
+          <div className="flex items-center gap-2 bg-foreground/5 p-2 rounded-xl">
             <LegalIcon size={24} />
             <p>Legal</p>
           </div>
 
-          <div className="xl:flex items-center gap-2 bg-foreground/5 p-2 rounded-xl lg:hidden">
+          <div className="flex items-center gap-2 bg-foreground/5 p-2 rounded-xl">
             <CreditCardIcon />
             <p>Pricing</p>
           </div>

@@ -20,16 +20,17 @@ export default function Home() {
       <HeroSection />
       <GenerateSection />
       <GallerySection />
-      <div className="bg-foreground/80 text-background flex items-center justify-between px-10">
+      <div className="bg-foreground/80 text-background flex flex-col md:flex-row items-center justify-between px-3 md:px-10">
         <KreaAi
           size={52}
-          className="bg-foreground text-background rounded-lg py-1"
+          className="bg-foreground text-background rounded-lg py-1 mt-5 md:mt-0"
         />
 
         <div className="flex items-center gap-5">
           <p className="text-2xl">curated by</p>
 
-          <Mobbin />
+          <Mobbin width={150} height={50} className="block md:hidden" />
+          <Mobbin className="hidden md:block" />
         </div>
       </div>
     </div>
